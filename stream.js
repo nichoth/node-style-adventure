@@ -17,7 +17,7 @@ function Progress (uploads) {
             if (!sum) return state
 
             var prog = evs.reduce((sum, ev) => sum + ev.loaded, 0)
-            return { sum, percent: prog / sum * 100 }
+            return { sum, percent: Math.floor(prog / sum * 100) }
         }, { sum: null, percent: null }),
 
         S.map(state => state.percent)
