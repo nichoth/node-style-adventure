@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "pull-stream": "^3.6.1",
-    "pull-stream-util": "^0.1.0"
+    "pull-stream-util": "^0.1.1"
   },
   "devDependencies": {
     "fastbench": "^1.0.1",

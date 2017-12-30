@@ -82,12 +82,10 @@ var S = require('pull-stream')
 var _ = require('pull-stream-util')
 
 function Progress (uploads) {
-    var uploads$ = uploads.map(function (up) {
-         return _.fromEvent('httpUploadProgress', up)
-    })
+    var uploadStreams = uploads.map(_.fromEvent('httpUploadProgress'))
 
     var progress$ = S(
-        _.combineLatest(uploads$),
+        _.combineLatest(uploadStreams),
 
         _.scan(function (state, evs) {
             var sum = state.sum || (evs.every(ev => ev.total) ?
