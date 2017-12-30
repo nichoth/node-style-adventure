@@ -1,8 +1,11 @@
 {
+  "scripts": {
+    "bench": "node test/bench/index.js",
+    "test": "tape test/*.js"
+  },
   "dependencies": {
     "pull-stream": "^3.6.1",
-    "pull-stream-util": "^0.1.0",
-    "xtend": "^4.0.1"
+    "pull-stream-util": "^0.1.0"
   },
   "devDependencies": {
     "fastbench": "^1.0.1",

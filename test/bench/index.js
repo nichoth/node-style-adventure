@@ -1,8 +1,8 @@
 var EE = require('events').EventEmitter
 var bench = require('fastbench')
 var S = require('pull-stream')
-var Progress = require('../stream')
-var UploadProgress = require('../emitter')
+var Progress = require('../../stream')
+var UploadProgress = require('../../emitter')
 
 var run = bench([
     function benchStream (done) {

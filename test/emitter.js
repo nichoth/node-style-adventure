@@ -1,8 +1,8 @@
 var test = require('tape');
-var UploadProgress = require('../emitter')
 var Bus = require('events').EventEmitter;
+var UploadProgress = require('../emitter')
 
-test('upload progress', function (t) {
+test('progress event emitter', function (t) {
     t.plan(1);
     var uploads = [ new Bus(), new Bus() ];
     var uploadProgress = UploadProgress(uploads);

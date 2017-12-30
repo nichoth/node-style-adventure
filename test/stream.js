@@ -3,7 +3,7 @@ var EE = require('events').EventEmitter
 var test = require('tape')
 var Progress = require('../stream')
 
-test('upload progress', function (t) {
+test('progress stream', function (t) {
     t.plan(1)
     var uploads = [new EE(), new EE(), new EE()]
     var progress$ = Progress(uploads)
