@@ -79,7 +79,6 @@ module.exports = UploadProgress;
 
 ```js
 var S = require('pull-stream')
-var xtend = require('xtend')
 var _ = require('pull-stream-util')
 
 function Progress (uploads) {
