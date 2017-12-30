@@ -18,11 +18,12 @@ function Progress (uploads) {
             return { sum, percent: Math.floor(prog / sum * 100) }
         }, { sum: null, percent: null }),
 
+        S.filter(state => state.sum),
         S.map(state => state.percent)
     )
 
     progress$.close = function () {
-        uploads$.forEach(up => up.end())
+        uploadStreams.forEach(up => up.end())
     }
 
     return progress$
