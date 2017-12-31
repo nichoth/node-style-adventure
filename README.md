@@ -5,7 +5,7 @@ Take multiple s3 uploads, and return progress events for the total progress for 
 <details>
 
 ```js
-var inherits = require('inherits')
+var inherits = require('util').inherits
 var EE = require('events').EventEmitter
 
 // take multiple s3 uploads and return a single event emitter with
