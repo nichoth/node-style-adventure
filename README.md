@@ -28,8 +28,10 @@ function UploadProgress (uploads) {
     uploads.forEach(function (upload, i) {
         self._stateListeners.push(getState);
         upload.on('httpUploadProgress', getState);
+
         function getState (data) {
             progresses[i] = data.loaded;
+            if (isReady) return;  // we have all the totals already
             if (data.total) totals[i] = data.total;
             if (totals.every(Boolean)) {
                 isReady = true;
@@ -48,7 +50,7 @@ function UploadProgress (uploads) {
         if (!isReady) return;
         var prog = progresses.reduce((acc, n) => acc + n);
         var percent = Math.floor(prog / sum * 100);
-        if (prev === percent) return;
+        if (prev === percent) return;  // filter duplicate values
         prev = percent;
         bus.emit('progress', percent);
     }
@@ -74,6 +76,8 @@ module.exports = UploadProgress;
 
 
 ## pull stream
+
+Why is this version smaller than the OO example? Where is the the equivalent state in here?
 
 <details>
 
